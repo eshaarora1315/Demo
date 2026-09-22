@@ -1,0 +1,53 @@
+primary_region   = "us-east-1"
+secondary_region = "us-west-2"
+environment      = "prod"
+project_name     = "enterprise-platform"
+
+organization_id      = "o-xxxxxxxxxx"
+management_account_id = "123456789012"
+network_hub_account_id = "123456789013"
+security_account_id   = "123456789014"
+
+workload_account_ids = {
+  dev     = "123456789015"
+  staging = "123456789016"
+  prod    = "123456789017"
+}
+
+eks_account_id = "123456789018"
+
+vpc_cidr             = "10.0.0.0/16"
+enable_nat_gateway   = true
+single_nat_gateway   = false
+enable_vpn_gateway   = false
+
+eks_cluster_version          = "1.30"
+eks_cluster_name             = "enterprise-eks"
+eks_instance_types           = ["m6i.xlarge", "m6i.2xlarge"]
+eks_windows_instance_types   = ["m6i.2xlarge"]
+eks_desired_size             = 3
+eks_min_size                 = 2
+eks_max_size                 = 10
+enable_windows_nodes         = true
+windows_desired_size         = 2
+windows_min_size             = 1
+windows_max_size             = 5
+
+enable_network_firewall      = true
+centralized_logging_enabled  = true
+opensearch_domain_name       = "enterprise-logs"
+opensearch_version           = "2.11"
+enable_cloudwatch_logs       = true
+log_retention_days           = 30
+
+availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+
+enable_karpenter   = true
+enable_monitoring  = true
+
+tags = {
+  Environment  = "production"
+  CostCenter   = "engineering"
+  Compliance   = "pci-dss"
+  DataClass    = "sensitive"
+}

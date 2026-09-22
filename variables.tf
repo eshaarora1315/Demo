@@ -96,7 +96,7 @@ variable "eks_cluster_name" {
 variable "eks_instance_types" {
   description = "Instance types for EKS Linux nodes"
   type        = list(string)
-  default     = ["m6i.xlarge", "m6i.2xlarge"]
+  default     = ["m7g.xlarge", "m7g.2xlarge"]
 }
 
 variable "eks_windows_instance_types" {
